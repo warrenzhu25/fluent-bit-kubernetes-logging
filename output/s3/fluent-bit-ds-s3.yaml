@@ -20,15 +20,13 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: fluent/fluent-bit:1.8.3-debug
+        image: fluent/fluent-bit:1.7-debug
         imagePullPolicy: Always
         ports:
           - containerPort: 2020
         envFrom:
         - secretRef:
             name: s3-secret
-        command: ["/fluent-bit/bin/fluent-bit"]
-        args: ["-v", "-c", "/fluent-bit/etc/fluent-bit.conf"]
         volumeMounts:
         - name: varlog
           mountPath: /var/log

@@ -27,6 +27,7 @@ spec:
         envFrom:
         - secretRef:
             name: s3-secret
+        args: ["-v", "-c", "/fluent-bit/etc/fluent-bit.conf"]
         volumeMounts:
         - name: varlog
           mountPath: /var/log

@@ -35,8 +35,8 @@ spec:
           readOnly: true
         - name: fluent-bit-config
           mountPath: /fluent-bit/etc/
-        command: ["printenv"]
-        args: ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+        command: ["/bin/echo"]
+        args: ["$AWS_ACCESS_KEY_ID", "$AWS_SECRET_ACCESS_KEY"]
       terminationGracePeriodSeconds: 10
       volumes:
       - name: varlog

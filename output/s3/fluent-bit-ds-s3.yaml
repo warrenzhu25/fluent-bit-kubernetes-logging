@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: fluent/fluent-bit:1.5
+        image: fluent/fluent-bit:1.8.3-debug
         imagePullPolicy: Always
         ports:
           - containerPort: 2020

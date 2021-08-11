@@ -24,9 +24,9 @@ spec:
         imagePullPolicy: Always
         ports:
           - containerPort: 2020
-        env:
-        - name: S3_ENDPOINT
-          value: "http://10.216.152.21:9000"
+        envFrom:
+        - secretRef:
+            name: s3-secret
         volumeMounts:
         - name: varlog
           mountPath: /var/log
